@@ -18,6 +18,8 @@ namespace Titanis.Msrpc.Mstsch.Xml
 		Password = 1,
 		// Case sensitive
 		S4U = 2,
+		// XML schema value is "InteractiveToken" (the enum name would serialize as "Interactive")
+		[System.Xml.Serialization.XmlEnum("InteractiveToken")]
 		Interactive = 3,
 		Group = 4,
 		ServiceAccount = 5,

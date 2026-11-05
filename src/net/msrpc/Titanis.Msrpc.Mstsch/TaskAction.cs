@@ -1,4 +1,5 @@
-﻿using Titanis.Msrpc.Mstsch.Xml;
+﻿using System.Xml;
+using Titanis.Msrpc.Mstsch.Xml;
 
 namespace Titanis.Msrpc.Mstsch
 {
@@ -16,6 +17,15 @@ namespace Titanis.Msrpc.Mstsch
 				Command = command,
 				WorkingDirectory = workingDirectory,
 				Arguments = args
+			});
+		}
+
+		public static ComHandlerAction ComHandler(string classId, XmlElement? data = null)
+		{
+			return new ComHandlerAction(new Xml.comHandlerType
+			{
+				ClassId = classId, 
+				Data = data 
 			});
 		}
 	}

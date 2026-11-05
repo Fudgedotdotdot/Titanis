@@ -23,7 +23,8 @@ CS1591 - Missing XML documentation
 		<NoWarn>CS1591;CS1573</NoWarn>
 		
 		<!-- CS1998 - Async method lacks await -->
-		<WarningsAsErrors>$(WarningsAsErrors);CS1998</WarningsAsErrors>
+		<!-- CS1998 - Removed this since errors with net8.0.46 something -->
+		<!-- <WarningsAsErrors>$(WarningsAsErrors);CS1998</WarningsAsErrors> -->
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)'=='Release'">

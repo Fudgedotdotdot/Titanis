@@ -1,5 +1,7 @@
-﻿using Titanis.Cli;
+﻿using Titanis;
+using Titanis.Cli;
 using Titanis.Cli.Workflow;
+
 
 namespace WorkflowSample
 {
@@ -13,7 +15,9 @@ namespace WorkflowSample
 		{
 			async Task DoTask(WorkflowContext context, CancellationToken cx)
 			{
-				await Task.Delay(1000, cx);
+			
+				this.Log.WriteInfo("Hi!");
+				await Task.Delay(100, cx);
 			}
 
 			await this.ExecuteFrameAsync(async cx =>

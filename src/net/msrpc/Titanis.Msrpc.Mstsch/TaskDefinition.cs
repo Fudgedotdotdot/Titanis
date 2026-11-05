@@ -90,7 +90,7 @@ namespace Titanis.Msrpc.Mstsch
 					{
 						UserId = principal,
 						LogonType = (Xml.logonType)logonType,
-						LogonTypeSpecified = true,
+						LogonTypeSpecified = (logonType != TaskLogonType.ServiceAccount) && (logonType != TaskLogonType.None),
 						RunLevel = runLevel,
 						RunLevelSpecified = true,
 					}

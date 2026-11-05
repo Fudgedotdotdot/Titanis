@@ -162,6 +162,21 @@ namespace Titanis.Msrpc.Mstsch
 			res.CheckAndThrow();
 		}
 
+		public async Task DeleteTask(
+			string taskPath,
+			CancellationToken cancellationToken
+			)
+		{
+			ArgumentException.ThrowIfNullOrEmpty(taskPath);
+
+			var res = (Hresult)await _proxy.SchRpcDelete(
+				taskPath,
+				0,
+				cancellationToken
+				).ConfigureAwait(false);
+			res.CheckAndThrow();
+		}
+
 		public async Task StopTaskInstance(
 			Guid instance,
 			CancellationToken cancellationToken
